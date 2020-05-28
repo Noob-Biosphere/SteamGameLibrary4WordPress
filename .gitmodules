@@ -1,0 +1,4 @@
+[submodule "API"]
+	path = API
+	url = https://github.com/Fog-Forest/Steam-page.git
+	branch = AzimiaoPlugin
