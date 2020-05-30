@@ -22,8 +22,6 @@ function zm_sg4wp_menu()
 
 function zm_output_config_page()
 {
-
-
 ?>
     <div class="sg4wp">
         <h1>Steam游戏数据库模板设置</h1>
@@ -51,6 +49,19 @@ function zm_output_config_page()
 
                     </td>
                 </tr>
+                <tr class="sg4wp">
+                    <th>STEAM API 接口:</th>
+                    <td>
+                        <label><input type="radio" name="zm_sg4wp_apitype" value ="1" <?php echo esc_attr(get_option('zm_sg4wp_apitype')) == "1" ?  'checked = "checked"' : "" ?>>使用本地接口</label>
+                        <label><input type="radio" name="zm_sg4wp_apitype" value ="2" <?php echo esc_attr(get_option('zm_sg4wp_apitype')) == "2" ?  'checked = "checked"' : "" ?>>使用第三方接口(miao233)</label>
+                    </td>
+                </tr>
+                <tr class="sg4wp">
+                    <th>缓存过期时间（秒）:</th>
+                    <td>
+                        <input type="number" name="zm_sg4wp_cachetime" value=<?php echo esc_attr(get_option('zm_sg4wp_cachetime'))?>>
+                    </td>
+                </tr>
             </table>
             <?php submit_button(); ?>
         </form>
@@ -63,6 +74,9 @@ function zm_sg4wp_config_data()
 {
     register_setting("zm-sg4wp", "zm_sg4wp_id");
     register_setting("zm-sg4wp", "zm_sg4wp_cardtype");
+    register_setting("zm-sg4wp", "zm_sg4wp_apitype");
+    register_setting("zm-sg4wp", "zm_sg4wp_cachetime");
+
 }
 
 function zm_sg4wp_config_style()

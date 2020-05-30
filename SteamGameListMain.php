@@ -24,6 +24,8 @@ register_activation_hook( __FILE__, "zm_sg4wp_install");
 function zm_sg4wp_install(){
     update_option("zm_sg4wp_id", "76561198151843146");
     update_option("zm_sg4wp_type", "3");
+    update_option( "zm_sg4wp_apitype","2");
+    update_option( "zm_sg4wp_cachetime", 86400);
 }
 
 
