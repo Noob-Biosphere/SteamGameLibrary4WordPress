@@ -53,7 +53,7 @@ function zm_output_config_page()
                     <th>STEAM API 接口:</th>
                     <td>
                         <label><input type="radio" name="zm_sg4wp_apitype" value ="1" <?php echo esc_attr(get_option('zm_sg4wp_apitype')) == "1" ?  'checked = "checked"' : "" ?>>使用本地接口</label>
-                        <label><input type="radio" name="zm_sg4wp_apitype" value ="2" <?php echo esc_attr(get_option('zm_sg4wp_apitype')) == "2" ?  'checked = "checked"' : "" ?>>使用第三方接口(miao233)</label>
+                        <label><input type="radio" name="zm_sg4wp_apitype" value ="2" <?php echo esc_attr(get_option('zm_sg4wp_apitype')) == "2" ?  'checked = "checked"' : "" ?>>使用第三方接口(miao33.top提供)</label>
                     </td>
                 </tr>
                 <tr class="sg4wp">
