@@ -3,13 +3,13 @@
  * Plugin Name: Steam GameLibrary For WordPress
  * Plugin URI: https://www.azimiao.com
  * Description: Steam 游戏库列表，后台发布页面时选择“Steam库”即可
- * Version: 0.0.1b2
+ * Version: 0.0.1b3
  * Author: 菜鸟生物圈
  * Author URI: https://github.com/Noob-Biosphere
  */
 
  
-define('SG4WP_VERSION', '0.0.1b1');
+define('SG4WP_VERSION', '0.0.1b3');
 define('SG4WP_PLUGIN_URL', plugins_url('', __FILE__));
 define('SG4WP_PLUGIN_DIR', plugin_dir_path(__FILE__));
 define('SG4WP_PLUGIN_FILE', __FILE__);
