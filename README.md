@@ -8,12 +8,31 @@
 1. 拉取本仓库所有文件，包括**子模块**:`git clone --recursive`。
 2. 上传并启用插件
 3. 在`后台`->`Steam游戏库`中填写对应的账户与配置信息<br>![设置界面](assets/image/settingtip2.jpg)
-    - 注意，目前使用的 Steam API 需要 Web API key，请访问：`https://steamcommunity.com/dev/apikey`自行申请。
-        - Web API 可能因本插件漏洞、WordPress 漏洞等而泄漏
-        - 当访问三方 API 或通过 CDN 访问 API 时，您的 Web Key 会暴露给三方 API 运营者或 CDN 服务商
-        - 本插件未经过安全审计，受限于个人水平，请自行承担 Web API 泄漏之责任
 4. 新建页面，页面模板选择`Steam库`
 5. 保存页面，前台预览
+
+## 信息安全说明
+
+目前使用的 Steam API 需要 Web API key，请访问：`https://steamcommunity.com/dev/apikey`申请。
+
+原则上，前台用户看不到 Web API key，API Key 由 Server 持有，不对前台访问者暴露。
+
+```mermaid
+sequenceDiagram
+    网页浏览者->>WordPress(后端Server): 获取游戏库数据
+    WordPress(后端Server)->> API-Server: 这是我的 Web API key，获取数据
+    API-Server ->> Steam服务器: 这是我的 Web API key，获取数据
+    Steam服务器 ->> API-Server: 数据
+    API-Server ->> WordPress(后端Server): 数据
+    WordPress(后端Server) ->> 网页浏览者: 数据
+```
+
+但是，Web API 依旧可能因如下原因泄漏：
+
+- Web API 可能因本插件漏洞、WordPress 漏洞等而泄漏
+- 当访问三方 API-Server 或通过 CDN 访问 API-Server 时，您的 Web Key 会暴露给三方 API 运营者或 CDN 服务商
+
+本插件未经过安全审计，受限于个人水平，请自行承担 Web API 泄漏之责任。
 
 ## TODO
 
