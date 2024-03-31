@@ -10,5 +10,6 @@ delete_option("zm_sg4wp_id");
 delete_option("zm_sg4wp_type");
 delete_option( "zm_sg4wp_apitype" );
 delete_option( "zm_sg4wp_cachetime" );
-
+delete_option("zm_sg4wp_thirdapi");
+delete_option("zm_sg4wp_key");
 ?>
